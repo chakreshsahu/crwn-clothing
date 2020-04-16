@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
@@ -14,7 +13,7 @@ import "./header.styles.scss";
 const Header = ({ currentUser, hidden }) => (
   <div className="header">
     <Link className="logo-container" to="/">
-      <Logo className="logo"></Logo>
+      <Logo className="logo" />
     </Link>
     <div className="options">
       <Link className="option" to="/shop">
@@ -38,9 +37,9 @@ const Header = ({ currentUser, hidden }) => (
   </div>
 );
 
-const mapStateToPros = ({ user: { currentUser }, cart: { hidden } }) => ({
+const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
   currentUser,
   hidden,
 });
 
-export default connect(mapStateToPros)(Header);
+export default connect(mapStateToProps)(Header);
